@@ -1,0 +1,38 @@
+* {
+  font-family: "Lato";
+}
+#content {
+  margin: auto;
+  width: 900px;
+}
+
+strong {
+  background: #f5fffa;
+}
+
+.boundingBox {
+  text-align: center;
+  background: #f5fffa;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+}
+tr .boundingBox {
+  width: 100px;
+  font-size: 16px;
+}
+
+.tableHead {
+  text-align: center;
+  background: #f5fffa;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+
+  width: 300px;
+}
+
+#go {
+  clear: both;
+  font-size: 18px;
+  float: right;
+  width: 200px;
+}

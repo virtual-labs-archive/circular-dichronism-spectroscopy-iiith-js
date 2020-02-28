@@ -1,0 +1,45 @@
+* {
+  font-family: "Lato";
+}
+#content {
+  margin: auto;
+  width: 1000px;
+}
+
+.boundingBox {
+  text-align: center;
+  background: #f5fffa;
+  background-color: #f5fffa;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+}
+.boundingBoxLeft {
+  text-align: center;
+  background: #f5fffa;
+  background-color: #f5fffa;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+  width: 600px;
+  height: 90px;
+}
+#leftSection {
+  float: left;
+  width: 660px;
+  height: 900px;
+}
+#rightSection {
+  margin-top: 0;
+  float: left;
+  background: #f5fffa;
+  background-color: #f5fffa;
+  margin-left: 20px;
+  width: 320px;
+  height: 600px;
+}
+.start {
+  float: left;
+  margin-top: 170px;
+  margin-left: 20px;
+  width: 145px;
+  color: green;
+}
