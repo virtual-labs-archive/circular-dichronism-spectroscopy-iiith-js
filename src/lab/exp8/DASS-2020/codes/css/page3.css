@@ -1,0 +1,62 @@
+* {
+  font-family: "Lato";
+}
+
+#content {
+  margin: auto;
+  width: 900px;
+}
+
+.boundingBox {
+  text-align: center;
+  background: #f5fffa;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+}
+.boundingBoxTop {
+  text-align: center;
+  background: #f5fffa;
+  padding: 5px 2px 5px 2px;
+  border-radius: 5px;
+
+  width: 400px;
+  height: 550px;
+}
+.boundingBoxBottom {
+  text-align: center;
+  background: #f5fffa;
+  padding: 5px 2px 5px 2px;
+  border-radius: 5px;
+
+  width: 400px;
+  height: 500px;
+}
+.boundingBoxBottom1 {
+  text-align: center;
+  background: #f5fffa;
+  padding: 5px 2px 5px 2px;
+  border-radius: 5px;
+
+  width: 400px;
+  height: 250px;
+}
+#leftSection {
+  float: left;
+  width: 400px;
+}
+#rightSection {
+  float: left;
+  margin-left: 95px;
+  width: 400px;
+}
+#start {
+  clear: left;
+  float: right;
+  margin-left: 20px;
+  width: 150px;
+  color: green;
+}
+#start a {
+  color: green;
+  text-decoration: none;
+}
