@@ -1,151 +1,220 @@
+
+
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-
-<head>
-  
-  <!--It is a good practice to declare the encoding even for an 
-  English Web site. One function of this is to tag is to "reset"
-  the user's browser back to Latin-1 and ensure proper font 
-  settings. The Unicode "utf-8" encoding also ensures that any 
-  special characters inserted such as "Smart quotes", currency 
-  symbols, em-dashes and so forth will be properly displayed in
-  most browsers.-->
-  <meta http-equiv="Content-Type" content="text/html; 
-  charset=utf-8" >
-
-
-  <!-- The following meta element gives the appearance of using 
-  Internet Explorer (IE) but actually renders the page in google 
-  chrome thus rescuing the older IE versions and providing the 
-  speed and standards compliance, and security of Chrome 
-  http://tech18.com/google-chrome-frame-rescue-older-ie.html -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-
-  <!-- The default title of the lab. -->
-  <title class="custom" id="page-title">Virtual Labs</title>
-  
-
-  <!-- Following meta tags store the information about the 
-  author and any other relevant information about the  code -->
-  <meta name="author" content="" class="custom">
-  <meta name="description" content="" class="custom">
-
-
-  <!-- Place the relative address of the favicon 
-  ("images/logo.jpeg" here). All major browsers support the link
-  rel="shortcut icon"  tag to associate a small icon with the 
-  page -->
-  <link rel="shortcut icon" href="images/favicon.png" 
-  class="custom">
-
-
-  <!-- These are the stylesheets used for the lab. Please don't
-  edit them; If you do, you will lose the edits in subsequent 
-  releases of this User Interface. -->
-  <link rel="stylesheet" href="css/default.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
-
-  <!-- Instead add your custom styles to override the defaults 
-  coming from the above style sheets. -->
-  <link rel="stylesheet" href="css/override.css"/>  
-  
-  <!-- ***************************************************** -->
-
-  <!-- All JavaScript at the bottom, except for Modernizr which
-  enables HTML5 elements & feature detects -->
-  <script type="text/javascript" src="js/modernizr-1.5.min.js">
-  </script>
-
-</head>
-
-<body> 
-  <div id="container"></div>
-<style type="text/css">
-#lab-footer, .footer {
-    float:left;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    text-align: center;
-    
- width: 90%;
-}
-</style>
-
-<footer  class="footer">
-    <!-- Put the content here-->
-    <h3><a href="http://virtual-labs.ac.in/nmeict/" target="_blank">Sponsered by MHRD (NME-ICT) </a> | <a href="http://virtual-labs.ac.in/licensing/" target="_blank"> Licensing Terms </a> | <a href="http://virtual-labs.ac.in/feedback/" target="_blank">Feedback<a></h3>
-  </footer>
-  <div id="hidden-content" />
-		
-  <!-- Javascript at the bottom for fast page loading -->
-
-  <script src="js/jquery-1.4.2.min.js"></script>
-
-  <script type="text/javascript">
-  $(document).ready(function() 
-  {
-                
-    $('#hidden-content').load('default.html #lab', function(response,status,xhr)
-    {
-      //alert("loaded successfully");
-    });
-       
-    $('#container').load('content.html #lab', function(response,status,xhr)
-    {
-                        
-      $("#container .default").each(function()
-      {
-                                
-        sectionId = $(this).attr('id');
-        sectionContent = $("#hidden-content #" + sectionId).html();
-        $("#container #" + sectionId).html(sectionContent);
-                                
-      });
-
-      $("#container #lab-article-sections > section").each(function() 
-      {
-
-        sectionId = $(this).attr('id');
-        headerId = $("#" + sectionId + "-heading").html();
-        iconId = $("#" + sectionId + "-icon").html();
-                                        
-        $("#container #lab-article-navigation ul").append(
-                "<li> <a href=\'#\' id=\'"+ sectionId + 
-                "-menu\'>" + iconId +"<br />" + headerId + 
-                "</a> </li>");
-                                        
-      });
-      /*                          
-      $("#lab-article-sections").after("<div id='lab-article-sections-view'> </div>");
-      $("#lab-article-sections-view").html($("#lab-article-sections section:first").html());*/
-      $("#lab-article-sections section").hide();
-	  $("#lab-article-sections section:first").show();
-      $("#lab-article-navigation ul > li a").live('click', function() 
-      {
-                                                
-        menuId = $(this).attr('id'); // this points to the current element
-        sectionId = menuId.replace(/-menu/i, "");
-        $("#lab-article-sections section").hide();
-		$("#lab-article-sections #" + sectionId).show();
-        /*$("#lab-article-sections-view").html($("#lab-article-sections #" + sectionId).html());*/
-
-      });
-    });		
-  });
-
-  </script>
-
-
-  <!--<script type="text/javascript" src="js/MathJax/MathJax.js"> -->
-  </script>
-
-
-  <!-- ******* ADD/OVERRIDE JAVASCRIPT FILES HERE ********** -->
-  
-
-  <!-- ***************************************************** -->
-  
-  
-</body>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Welcome to Virtual Labs - A MHRD Govt of india Initiative">
+      <meta name="author" content="Virtual Labs - A MHRD Govt of india Initiative">
+      <title>Welcome to Virtual Labs - A MHRD Govt of india Initiative</title>
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Important Owl stylesheet -->
+      <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.css">
+      <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.css">
+      <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.css">
+      <!-- Custom CSS -->
+      <link href="css/style.css" rel="stylesheet">
+      <!--	<script type="text/javascript" src = 'tabs.js'></script>
+         <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-67558473-1', 'auto');ga('send', 'pageview');</script>-->
+   </head>
+   <body id="page-top" class="index">
+      <div id="top">
+         <header>
+            <!-- Navigation -->
+            <nav class="navbar navbar-default " style="background-color: white !important; margin-bottom: 0px !important;">
+               <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header page-scroll">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar" style="background-color: #77BB41"></span>
+                     <span class="icon-bar" style="background-color: #77BB41"></span>
+                     <span class="icon-bar" style="background-color: #77BB41"></span>
+                     </button>
+                     <a class="navbar-brand main-logo-a" href="http://vlab.co.in/"><img src="images/logo-new.png" class="img-responsive main-logo" /></a>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse menu-div" id="bs-example-navbar-collapse-1" style="border: 0px;">
+                     <!--   <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
+                        <li>
+                        	<form method="get" action="search-result.html">
+                               	<input type="text" class="search-textbox" placeholder="SEARCH FOR A LAB" name="q" id="q"/>
+                               	<input type="submit" value="" class="search-button" />
+                               </form>
+                        </li>
+                        </ul>  -->
+                     <ul class="nav navbar-nav navbar-right menu-ul">
+                        <li class="page-scroll menu-li " >
+                           <a href="http://vlab.co.in/" class="menu-a" >HOME</a>
+                        </li>
+                        <li class="page-scroll menu-li " >
+                           <a href="http://vlab.co.in/participating-institutes" class="menu-a" >PARTNERS</a>
+                        </li>
+                        <li class="page-scroll menu-li " >
+                           <a href="http://vlab.co.in/contact-us" class="menu-a" >CONTACT</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- /.navbar-collapse -->  
+               </div>
+               <!-- /.container-fluid -->
+            </nav>
+         </header>
+         <div id="content">
+            <div class="container-fluid" >
+               <div class="row" style="height: 16px !important;">
+                  <hr style="background:#ff6600 !important;  height: 8px; margin-top: 0px;">
+               </div>
+               <!-- row end -->
+            </div>
+            <!-- container-fluid end for slider -->
+            <!-- =================================================================================================================================== -->
+            <div class="container-fluid"  style="margin-left: 35px; margin-right: 35px;">
+               <h2 class="text-h2-lightblue" style=" margin-bottom: 20px; margin-top: 10px; "><a href="http://vlab.co.in/broad-area-chemical-sciences" class="sidebar-a" > Chemical Sciences</a><br/></h2>
+               <div class="row">
+                  <div class="col-md-2 sidebar-col-2">
+                     <!--edit1-->
+                     <a href="Introduction.html?domain= Chemical Sciences" class="sidebar-a" >
+                        <h3 class="text-h3-darkblue" style="margin-top: 2px; color: #ff6600 !important;">Introduction</h3>
+                     </a>
+                     <a href="List ofExperiments.html?domain= Chemical Sciences" class="sidebar-a" >
+                        <h3 class="text-h3-darkblue" style="margin-top: 2px;">List of Experiments</h3>
+                     </a>
+                     <a href="TargetAudience.html?domain= Chemical Sciences" class="sidebar-a" >
+                        <h3 class="text-h3-darkblue" style="margin-top: 2px;">Target Audience</h3>
+                     </a>
+                     <a href="BackgroundPrinciple.html?domain= Chemical Sciences" class="sidebar-a" >
+                        <h3 class="text-h3-darkblue" style="margin-top: 2px;">Background Principle</h3>
+                     </a>
+                     <a href="Pre-Requisite.html?domain= Chemical Sciences" class="sidebar-a" >
+                        <h3 class="text-h3-darkblue" style="margin-top: 2px;">Pre-requisites</h3>
+                     </a>
+                     <a href="Acknowledgement.html?domain= Chemical Sciences" class="sidebar-a" >
+                        <h3 class="text-h3-darkblue" style="margin-top: 2px;">Acknowledgement</h3>
+                     </a>
+                     <a href="Feedback.html?domain=Chemical Sciences" class="sidebar-a" >
+                        <h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3>
+                     </a>
+                  </div>
+                  <div class="col-md-10 lab-list-col-10">
+                     <!--edit -->
+                     <h1 class="text-h1-lightblue">Circular Dichroism Spectroscopy Lab</h1>
+                     <div align="justify" class="content" id="lab-article-section-1-content">
+                        <p>Circular dichroism (CD) spectroscopy is a spectroscopic technique where the CD of molecules is measured over a range of wavelengths. CD spectroscopy is used extensively to study chiral molecules of all types and sizes, but it is in the study of large biological molecules where it finds its most important applications. A primary use is in analyzing the secondary structure or conformation of macromolecules, particularly proteins, and because secondary structure is sensitive to its environment, e.g. temperature or pH, circular dichroism can be used to observe how secondary structure changes with environmental conditions or on interaction with other molecules. Structural, kinetic and thermodynamic information about macromolecules can be derived from circular dichroism spectroscopy.
+                        </p>
+                        <p><br>Circular dichroism spectroscopy is particularly useful for:<br>
+                        <ul>
+                           <li class="pstyle">Determining whether a protein is folded, and if so characterizing its secondary structure, tertiary structure, and the structural family to which it belongs</li>
+                           <li class="pstyle">Comparing the structures of a protein obtained from different sources (e.g. species or expression systems) or comparing structures for different mutants of the same protein</li>
+                           <li class="pstyle">Demonstrating comparability of solution conformation and/or thermal stability after changes in manufacturing processes or formulation </li>
+                           <li class="pstyle">Studying the conformational stability of a protein under stress -- thermal stability, pH stability, and stability to denaturants and how this stability is altered by buffer composition or addition of stabilizers and excipients</li>
+                           <li class="pstyle">CD is excellent for finding solvent conditions that increase the melting temperature and/or the reversibility of thermal unfolding, conditions which generally enhance shelf life</li>
+                           <li class="pstyle">Determining whether protein-protein or protein-ligand interactions alter the conformation of protein</li>
+                           <li class="pstyle">If there are any conformational changes, this will result in a spectrum which will differ from the sum of the individual components. Small conformational changes have been seen, for example, upon formation of several different receptor/ligand complexes</li>
+                        </ul>
+                        </br></br></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- =================================================================================================================================== -->
+         </div>
+         <!-- content div -->
+         <footer id="footer">
+            <div class="footer-top" id="contact">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-4 col-md-6">
+                        <h4>Community Links</h4>
+                        <p>
+                           <a href="http://www.sakshat.ac.in/">Sakshat Portal</a>
+                        </p>
+                        <p>
+                           <a href="http://outreach.vlabs.ac.in/">Outreach Portal</a>
+                        </p>
+                        <p>
+                           <a href="http://vlab.co.in/faq">FAQ : Virtual Labs</a>
+                        </p>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <h4>Contact Us</h4>
+                        <p> <strong>Phone:</strong> General Information : 011-26582050 </p>
+                        <p> <strong>Email:</strong> support@vlab.co.in </p>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                           <a class="twitter" href="https://twitter.com/TheVirtualLabs" style="background: #55acee;">
+                           <i class="fa fa-twitter"></i>
+                           </a>
+                           <a class="facebook" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/" style="background: #3b5998;">
+                           <i class="fa fa-facebook"></i>
+                           </a>
+                           <a class="google-plus" href="https://www.youtube.com/watch?v=asxRaOgk6a0" style="background: #e52d27;">
+                           <i class="fa fa-youtube"></i>
+                           </a>
+                           <a class="linkedin" href="https://in.linkedin.com/in/virtual-labs-008ba9136" style="background: #2867B2;">
+                           <i class="fa fa-linkedin"></i>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+      </div>
+      <!-- top div -->
+      <!--
+         <script src="js/jquery.js"></script>-->
+      <!-- Bootstrap Core JavaScript 
+         <script src="js/bootstrap.min.js"></script>-->
+      <!-- Custom Theme JavaScript 
+         <script src="js/custom.js"></script>-->
+      <!-- Include js plugin 
+         <script src="vendors/owl-carousel/owl.carousel.js"></script>
+         
+         <script type="text/javascript">
+         $(document).ready(function() {
+         	 
+         	  var owl = $("#owl-demo");
+         	  owl.owlCarousel({
+         	      navigation: true,
+         	      navigationText: [
+         	                       "<img src='images/left-arrow.png'>",
+         	                       "<img src='images/right-arrow.png'>"
+         	                       ],
+         	      /* autoPlay : 3000,
+         	      stopOnHover : true */
+         	  });
+         	  
+         	  //owl for partner institutions
+         	  var owl = $("#owl-partner-institutions");
+         	  owl.owlCarousel({
+         	      navigation: true,
+         	      navigationText: [
+         	                       "<img src='images/left-arrow.png'>",
+         	                       "<img src='images/right-arrow.png'>"
+         	                       ],
+         	      autoPlay : 3000,
+         	      stopOnHover : true,
+         	      items : 8,
+         	  });
+         	 
+         	
+         
+          //owl for aboutus
+           var owl = $("#owl-aboutus");
+           owl.owlCarousel({
+               navigation: true,
+               singleItem:true
+           });
+          
+         });
+         </script>-->
+   </body>
+   <!-- jQuery -->
 </html>
+
