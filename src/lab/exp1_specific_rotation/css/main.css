@@ -176,7 +176,7 @@ body {
   position: fixed;
   display: none;
   overflow: auto;
-  width: 24%;
+  width: 16%;
   height: 100%;
   top: 20vh;
   /*left: 0;*/
@@ -192,7 +192,7 @@ body {
   top: 40%;
   left: 50%;
   font-size: 22px;
-  padding: 10px;
+  padding-top: 810px;
   font-family: "Lato";
   color: black;
   transform: translate(-50%, -50%);
