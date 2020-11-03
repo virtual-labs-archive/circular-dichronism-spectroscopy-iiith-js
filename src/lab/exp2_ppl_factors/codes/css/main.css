@@ -224,7 +224,7 @@ body {
   overflow: auto;
   width: 27%;
   height: 50%;
-  top: 34vh;
+  /*top: 34vh;
   /*left: 0;*/
   right: 0;
   bottom: 0;
@@ -235,7 +235,7 @@ body {
 
 #text {
   position: relative;
-  top: 50%;
+  top: 100%;
   left: 50%;
   font-size: 25px;
   font-family: "Lato";

@@ -27,7 +27,7 @@ area {
 #container {
   top: -250px;
   position: relative;
-  left: 25%;
+  /*left: 25%;*/
 }
 #instruction1 {
   top: 150px;
@@ -49,6 +49,7 @@ height:75%;*/
 #eye {
   top: 50px;
   position: absolute;
+  left: 20px;
 }
 #light {
   top: 5px;
