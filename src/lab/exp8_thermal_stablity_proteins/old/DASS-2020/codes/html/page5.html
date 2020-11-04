@@ -1,14 +1,11 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<link
-	rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-	crossorigin="anonymous"
-  />
-  <link rel="stylesheet" href="../css/page5.css">
+<html lang="en"><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager-->
+	<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet"/>
+  <link href="../css/page5.css" rel="stylesheet"/>
   <script type="text/javascript">
 	function submitForm(){
 		var atom1=document.getElementById('start').value
@@ -32,14 +29,14 @@
 	  document.getElementById("end").innerHTML = options;
   }
   </script>  
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/main.css" rel="stylesheet"/>
   
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
 </head>
-<body>
+<body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
     <div class="top">
       <h3 class="set" style="margin-top:3vh;margin-bottom:3vh"><b> Select the Parameters</b></h3>
       <h4 class="set">
@@ -47,27 +44,27 @@
       </h4>
     
 </div>
-<div  style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"></div>
+<div style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"></div>
 
-<div id="content"> <br> <br> <br>
+<div id="content"> <br/> <br/> <br/>
 
-	<form name="paramSelect" action="" method="dialog">
+	<form action="" method="dialog" name="paramSelect">
 		
-	<table align="center" cellspacing="20px" cellpadding="10px">
-		<tr> <br>
+	<br/><br/><br/><table align="center" cellpadding="10px" cellspacing="20px">
+		<tbody><tr> 
 
 		<td class="tableHead"><strong> Starting Temperature</strong></td>
-		<td><select name="start" class="boundingBox" id="start" onchange="getOptions(this.options[this.selectedIndex].value)">
+		<td><select class="boundingBox" id="start" name="start" onchange="getOptions(this.options[this.selectedIndex].value)">
 		<script type="text/javascript">
 		for(var i = 5 ; i <= 100 ; i+=5){
 			document.write("<option value='"+i+"'>"+i+" C</option>");
 		}
 		</script>
 		</select></td></tr>
-		<tr> <br>
+		<tr> 
 
 		<td class="tableHead"><strong>Select Final Temperature</strong></td>
-		<td><select name="end" class="boundingBox" id="end">
+		<td><select class="boundingBox" id="end" name="end">
 		<script type="text/javascript">
 		for(var i = 5 ; i <= 100 ; i+=5){
 			if(i == 100){	
@@ -78,43 +75,32 @@
 			}
 		}
 		</script>
-		</select></td></tr> <br>
+		</select></td></tr> 
 
 		<tr>
 		<td class="tableHead"><strong>Select the Step Size</strong></td>
-		<td><select name="gap" id="gap" class="boundingBox">
+		<td><select class="boundingBox" id="gap" name="gap">
 		<script type="text/javascript">
 		for(var i = 5 ; i < 25 ; i+=5){
 			document.write("<option value='"+i+"'>"+i+" C</option>");
 		}
 		</script>
 		</select></td></tr>	
-	</table> <br>
+	</tbody></table> <br/>
 		
-		<button  id="go" class="btn btn-danger" onclick="submitForm()"> Submit</button>
+		<button class="btn btn-danger" id="go" onclick="submitForm()"> Submit</button>
 
-	</div>
+	</form></div>
 
 
-<script
-src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-crossorigin="anonymous"
-></script>
-<script
-src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-crossorigin="anonymous"
-></script>
-<script
-src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-crossorigin="anonymous"
-></script>
+<script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-</body>
 
-</html>
+
+
+</body></html>

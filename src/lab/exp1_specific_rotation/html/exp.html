@@ -1,66 +1,57 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="../css/exp.css" />
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager-->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/exp.css" rel="stylesheet" type="text/css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="../libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="../libraries/jQueryRotate.js"></script>
     <!-- <script type="text/javascript" src="mfs_expt2.js"></script> -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet"/>
+    <link href="../css/main.css" rel="stylesheet"/>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   </head>
 
-  <body>
+  <body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
     <div class="top">
       <div class="topitem">
     <div style="height:10%;width:100%;clear:both;"></div>
   
-        <h1 class="set"><b>Optical Rotation of Sugars<b></h1>
+        <h1 class="set"><b>Optical Rotation of Sugars<b></b></b></h1><b><b>
         <h3 class="set">
           <b>Experiment to Determine the Specific Rotation of different Sugar samples</b>
         </h3>
       
     
-    </div>
-    </div>
+    </b></b></div><b><b>
+    </b></b></div><b><b>
       <!-- First row consists of title of the experiment and the reset button -->
       <div class="row" style="margin-top: 150px;">
         <div class="col-sm-12">
 
-          <img
-            id="know"
-            src="../images/know.png"
-          />
+          <img id="know" src="../images/know.png"/>
           <!-- button to scan the sample on the computer-->
-          <img
-            id="proceed"
-            src="../images/proceed.png"
-          />
+          <img id="proceed" src="../images/proceed.png"/>
         <div id="container">
           <map name="polarimetermap">
-            <area id="coor" shape="rect" coords="121,227,336,375"/>
+            <area coords="121,227,336,375" id="coor" shape="rect"></area>
           </map>
           <img id="instruction1"/>
           <img id="arrow"/>
-          <img id="equip" usemap="#polarimetermap">
+          <img id="equip" usemap="#polarimetermap"/>
           <map name="circle">
-            <area id="coor1" shape="circle" coords="840,370,71"/>
+            <area coords="840,370,71" id="coor1" shape="circle"></area>
           </map>
           <img id="zoom" usemap="#circle"/>
         	<map name="light">
-            	<area id="coor2" shape="rect" coords="235,156,456,208"/>
+            	<area coords="235,156,456,208" id="coor2" shape="rect"></area>
           	</map>
-          <img id="eye" usemap="#light" />
+          <img id="eye" usemap="#light"/>
           <img id="digarr"/>
           <img id="light" usemap="#light1"/>
           <img id="cap" usemap="#caph"/>
@@ -75,12 +66,12 @@
           <map name="tri">
             	<!-- <area id="coor3" shape="rect" coords="481,78,578,229"/>
               <area id="coor4" shape="rect" coords="94,71,185,232"/> -->
-              <area id="coord1" shape="circle" coords="100,140,30"/>
-              <area id="coord2" shape="circle" coords="185,140,30"/>
-              <area id="coord3" shape="circle" coords="485,140,30"/>
-              <area id="coord4" shape="circle" coords="570,140,30"/>
-              <area id="coord5" shape="circle" coords="143,220,30"/>
-              <area id="coord6" shape="circle" coords="528,220,30"/>
+              <area coords="100,140,30" id="coord1" shape="circle"></area>
+              <area coords="185,140,30" id="coord2" shape="circle"></area>
+              <area coords="485,140,30" id="coord3" shape="circle"></area>
+              <area coords="570,140,30" id="coord4" shape="circle"></area>
+              <area coords="143,220,30" id="coord5" shape="circle"></area>
+              <area coords="528,220,30" id="coord6" shape="circle"></area>
 
           </map>
           <img id="sols" usemap="#tri"/>
@@ -90,17 +81,17 @@
           <div class="buttons">
 <h3 id="next3"></h3>
 
-<button class="btn btn-success" id="next5" style="position: fixed; transform:translate(760px,450px); visibility:hidden" > Next Step</button>
+<button class="btn btn-success" id="next5" style="position: fixed; transform:translate(760px,450px); visibility:hidden"> Next Step</button>
           </div>
           <!-- <input id="text">
           <div id="demo1"> -->
-            <img src="../gifs/diag.gif" width="100px" height="100px" style="position: fixed; transform:translate(320px,480px)" id="next41">
-            <img src="../gifs/diag.gif" width="100px" height="100px" style="position: fixed; transform:translate(348px,420px)" id="next42">
-            <div class="div-pos" style="position: fixed;"id="next1">
+            <img height="100px" id="next41" src="../gifs/diag.gif" style="position: fixed; transform:translate(320px,480px)" width="100px"/>
+            <img height="100px" id="next42" src="../gifs/diag.gif" style="position: fixed; transform:translate(348px,420px)" width="100px"/>
+            <div class="div-pos" id="next1" style="position: fixed;">
               
-              <svg width=400 height=1000>
+              <svg height="1000" width="400">
 
-           <rect width=150 height=200 fill=red  onclick="window.location.href='./2.html'" id="next2"></rect>
+           <rect fill="red" height="200" id="next2" onclick="window.location.href='./2.html'" width="150"></rect>
 
 
 
@@ -111,19 +102,7 @@
 
         </div> 
 
-    <script type="text/javascript" src="../js/exp.js"></script>
-<script
-src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-crossorigin="anonymous"
-></script>
-<script
-src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-crossorigin="anonymous"
-></script>
-<script
-src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-crossorigin="anonymous"
-></script>
+    <script src="../js/exp.js" type="text/javascript"></script>
+<script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script></div></div></div></b></b></body></html>
