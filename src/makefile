@@ -1,4 +1,4 @@
-ybuild-dir=../build
+build-dir=../build
 lib-dir=lib
 build-js-dir=${build-dir}/js
 
@@ -7,7 +7,7 @@ theme=blue-icon
 all:patch-analytics help-dir
 
 help-dir:
-		
+	
 	(touch ${build-dir}/theme-${theme}; rsync -avC --exclude ${mathjax}.zip lab/* lib/* help themes/${theme}/* ${build-dir}) 
 
 #don't remove the js directory, since copying it again with mathjax takes too long.

@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager-->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    
+    <title>The MathJax.HTML Object — MathJax v2.0 documentation</title>
+    <link href="../_static/mj.css" rel="stylesheet" type="text/css"/>
+    <link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script src="../_static/jquery.js" type="text/javascript"></script>
+    <script src="../_static/underscore.js" type="text/javascript"></script>
+    <script src="../_static/doctools.js" type="text/javascript"></script>
+    <!--<script type="text/javascript" src="../../../MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
+    <link href="../index.html" rel="top" title="MathJax v2.0 documentation"/>
+    <link href="index.html" rel="up" title="The MathJax API"/>
+    <link href="callback.html" rel="next" title="The MathJax.Callback Class"/>
+    <link href="message.html" rel="prev" title="The MathJax.Message Object"/> 
+  </head>
+  <body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
+    
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a accesskey="I" href="../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a accesskey="N" href="callback.html" title="The MathJax.Callback Class">next</a> |</li>
+        <li class="right">
+          <a accesskey="P" href="message.html" title="The MathJax.Message Object">previous</a> |</li>
+        <li><a href="../index.html">MathJax v2.0 documentation</a> »</li>
+          <li><a accesskey="U" href="index.html">The MathJax API</a> »</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-mathjax-html-object">
+<span id="api-html"></span><h1>The MathJax.HTML Object<a class="headerlink" href="#the-mathjax-html-object" title="Permalink to this headline">¶</a></h1>
+<p>The <tt class="docutils literal"><span class="pre">MathJax.HTML</span></tt> object provides routines for creating HTML
+elements and adding them to the page, and in particular, it contains
+the code that processes MathJax’s <a class="reference internal" href="../HTML-snippets.html#html-snippets"><em>HTML snippets</em></a>
+and turns them into actual DOM objects.  It also implements the
+methods used to manage the cookies used by MathJax.</p>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl class="describe">
+<dt>
+<tt class="descname">Cookie.prefix: "mjx"</tt></dt>
+<dd><p>The prefix used for names of cookies stored by MathJax.</p>
+</dd></dl>
+
+<dl class="describe">
+<dt>
+<tt class="descname">Cookie.expires: 365</tt></dt>
+<dd><p>The expiration time (in days) for cookies created by MathJax.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="Element">
+<tt class="descname">Element</tt><big>(</big><em>type</em><span class="optional">[</span>, <em>attributes</em><span class="optional">[</span>, <em>contents</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a DOM element of the given type.  If <cite>attributes</cite> is
+non-<tt class="docutils literal"><span class="pre">null</span></tt>, it is an object that contains <cite>key:value</cite> pairs of
+attributes to set for the newly created element.  If <cite>contents</cite> is
+non-<tt class="docutils literal"><span class="pre">null</span></tt>, it is an <a class="reference internal" href="../HTML-snippets.html#html-snippets"><em>HTML snippet</em></a> that
+describes the contents to create for the element.  For example</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">HTML</span><span class="p">.</span><span class="nx">Element</span><span class="p">(</span>
+  <span class="s2">"div"</span><span class="p">,</span>
+  <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="s2">"MathDiv"</span><span class="p">,</span> <span class="nx">style</span><span class="o">:</span><span class="p">{</span><span class="nx">border</span><span class="o">:</span><span class="s2">"1px solid"</span><span class="p">,</span> <span class="nx">padding</span><span class="o">:</span><span class="s2">"5px"</span><span class="p">}},</span>
+  <span class="p">[</span><span class="s2">"Here is math: \\(x+1\\)"</span><span class="p">,[</span><span class="s2">"br"</span><span class="p">],</span><span class="s2">"and a display $$x+1\\over x-1$$"</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name"></col>
+<col class="field-body"></col>
+</colgroup><tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> — node type to be created</li>
+<li><strong>attributes</strong> — object specifying attributes to set</li>
+<li><strong>contents</strong> — HTML snippet representing contents of node</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first last">the DOM element created</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="addElement">
+<tt class="descname">addElement</tt><big>(</big><em>parent</em>, <em>type</em><span class="optional">[</span>, <em>attributes</em><span class="optional">[</span>, <em>content</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#addElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a DOM element and appends it to the <cite>parent</cite> node
+provided.  It is equivalent to</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">parent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">MathJax</span><span class="p">.</span><span class="nx">HTML</span><span class="p">.</span><span class="nx">Element</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span><span class="nx">attributes</span><span class="p">,</span><span class="nx">content</span><span class="p">))</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name"></col>
+<col class="field-body"></col>
+</colgroup><tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><ul class="first simple">
+<li><strong>parent</strong> — the node where the element will be added</li>
+<li><strong>attributes</strong> — object specifying attributes to set</li>
+<li><strong>contents</strong> — HTML snippet representing contents of node</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first last">the DOM element created</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TextNode">
+<tt class="descname">TextNode</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#TextNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a DOM text node with the given text as its content.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name"></col>
+<col class="field-body"></col>
+</colgroup><tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> — the text for the node</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first last">the new text node</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="addText">
+<tt class="descname">addText</tt><big>(</big><em>parent</em>, <em>text</em><big>)</big><a class="headerlink" href="#addText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a DOM text node with the given text and appends it to the
+<cite>parent</cite> node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name"></col>
+<col class="field-body"></col>
+</colgroup><tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><ul class="first simple">
+<li><strong>parent</strong> — the node where the text will be added</li>
+<li><strong>text</strong> — the text for the new node</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first last">the new text node</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="setScript">
+<tt class="descname">setScript</tt><big>(</big><em>script</em>, <em>text</em><big>)</big><a class="headerlink" href="#setScript" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the contents of the <tt class="docutils literal"><span class="pre">script</span></tt> element to be the given
+<tt class="docutils literal"><span class="pre">text</span></tt>, properly taking into account the browser limitations and
+bugs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name"></col>
+<col class="field-body"></col>
+</colgroup><tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><ul class="first simple">
+<li><strong>script</strong> — the script whose content is to be set</li>
+<li><strong>text</strong> — the text that is to be the script’s new content</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first last"><tt class="docutils literal"><span class="pre">null</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="getScript">
+<tt class="descname">getScript</tt><big>(</big><em>script</em><big>)</big><a class="headerlink" href="#getScript" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the contents of the <tt class="docutils literal"><span class="pre">script</span></tt> element, properly taking into
+account the browser limitations and bugs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name"></col>
+<col class="field-body"></col>
+</colgroup><tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><ul class="first simple">
+<li><strong>script</strong> — the script whose content is to be retrieved</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first last">the text of the <tt class="docutils literal"><span class="pre">script</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="describe">
+<dt>
+<tt class="descname">Cookie.Set(name,data)</tt></dt>
+<dd><p>Creates a MathJax cookie using the <tt class="docutils literal"><span class="pre">MathJax.HTML.Cookie.prefix</span></tt>
+and the <cite>name</cite> as the cookie name, and the <cite>key:value</cite> pairs in
+the <cite>data</cite> object as the data for the cookie.  For example,</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">MathJax</span><span class="p">.</span><span class="nx">HTML</span><span class="p">.</span><span class="nx">Cookie</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="s2">"test"</span><span class="p">,{</span><span class="nx">x</span><span class="o">:</span><span class="mi">42</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="s2">"It Works!"</span><span class="p">});</span>
+</pre></div>
+</div>
+<p>will create a cookie named “mjx.test” that stores the values of
+<tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt> provided in the <cite>data</cite> object.  This data can be
+retrieved using the <tt class="xref py py-meth docutils literal"><span class="pre">MathJax.HTML.Cookie.Get()</span></tt> method
+discussed below.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name"></col>
+<col class="field-body"></col>
+</colgroup><tbody valign="top">
+<tr class="field"><th class="field-name">Parameters :</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> — the name that identifies the cookie</li>
+<li><strong>data</strong> — object containing the data to store in the cookie</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns :</th><td class="field-body"><p class="first last"><tt class="docutils literal"><span class="pre">null</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="describe">
+<dt>
+<tt class="descname">Cookie.Get(name[,obj])</tt></dt>
+<dd><p>Looks up the data for the cookie named <cite>name</cite> and merges the data
+into the given <cite>obj</cite> object, or returns a new object containing
+the data.  For instance, given the cookie stored by the example
+above,</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">HTML</span><span class="p">.</span><span class="nx">Cookie</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s2">"test"</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>would set <tt class="docutils literal"><span class="pre">data</span></tt> to <tt class="docutils literal"><span class="pre">{x:42,</span> <span class="pre">y:"It</span> <span class="pre">Works!"}</span></tt>, while</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span> <span class="nx">z</span><span class="o">:</span><span class="s2">"Safe"</span><span class="p">};</span>
+<span class="nx">MathJax</span><span class="p">.</span><span class="nx">HTML</span><span class="p">.</span><span class="nx">Cookie</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s2">"test"</span><span class="p">,</span><span class="nx">data</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>would leave <tt class="docutils literal"><span class="pre">data</span></tt> as <tt class="docutils literal"><span class="pre">{x:42,</span> <span class="pre">y:"It</span> <span class="pre">Works!",</span> <span class="pre">z:"Safe"}</span></tt>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The MathJax.HTML Object</a><ul>
+<li><a class="reference internal" href="#properties">Properties</a></li>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="message.html" title="previous chapter">The MathJax.Message Object</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="callback.html" title="next chapter">The MathJax.Callback Class</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form action="../search.html" class="search" method="get">
+      <input name="q" size="18" type="text"/>
+      <input type="submit" value="Go"/>
+      <input name="check_keywords" type="hidden" value="yes"/>
+      <input name="area" type="hidden" value="default"/>
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="callback.html" title="The MathJax.Callback Class">next</a> |</li>
+        <li class="right">
+          <a href="message.html" title="The MathJax.Message Object">previous</a> |</li>
+        <li><a href="../index.html">MathJax v2.0 documentation</a> »</li>
+          <li><a href="index.html">The MathJax API</a> »</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        © Copyright 2012 Design Science.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+    
+  
+</body></html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en"><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager-->
+	<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet"/>
+  <link href="../css/index.css" rel="stylesheet"/>
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/main.css" rel="stylesheet"/>
+  <script src="../js/overlay.js"></script>
+  <script crossorigin="anonymous" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+   // localStorage.setItem('Selection', 0);
+
+function selection(num){
+  //console.log(num)
+
+  // Set the high score to the users' current points
+  // Store the high score
+  localStorage.setItem('Selection', num);
+  num=localStorage.getItem('Selection')
+  num = parseInt(num);
+
+  swal({
+    title: "You Selected  Sample "+ num ,
+    text: "Click to Continue the Experiment!",
+    icon: "success",
+    button: "Continue",
+  })
+
+}
+  // Set the high score to the users' current points
+  function   showanimaation()
+{
+  document.getElementById("img-six").style.display = "none";
+
+}
+
+function chckfinal(){
+  var backvalue=localStorage.getItem('visit')
+  backvalue=parseInt(backvalue)
+  if(backvalue==1){
+    showanimaation()
+
+   on11()
+  setTimeout(function(){
+      off11()
+  } ,6000)
+
+  setTimeout( function(){
+  swal({
+    title: "Processing Done",
+    text: "Click to Continue the Experiment!",
+    icon: "success",
+    button: "Continue",
+  })
+},6000)
+setTimeout(function(){
+  swal(     { title: "Analysis of Graphs!",
+  text: "Click to Continue the Experiment!",
+  icon: "success",}    )
+.then((value) => {
+  window.location.href = '../Quiz/game.html';
+});
+}
+,6000)
+localStorage.setItem('visit',0)
+  }
+  
+
+}
+
+
+   function on11() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off11() {
+    document.getElementById("overlay").style.display = "none";
+  }
+    function chck(){
+        //console.log(1)
+        off(0);
+        document.getElementById("img-gif").style.display = "none";
+        on11()
+        setTimeout(function(){
+            off11()
+        } ,3000)
+
+        setTimeout(function(){
+          on(0);
+        },3000)
+    
+        setTimeout( function(){
+          // off(0);
+        swal({
+          title: "Nitrogen Purge Completed!",
+          text: "Oxygen is removed from the Chamber!",
+          icon: "success",
+          button: "Continue",
+        })
+      },3000)
+      setTimeout( function(){
+        document.getElementById("img-gif").style.display = "block";
+
+      },3000)
+      // on(0);
+    }
+
+    </script>
+
+</head>
+
+<body onload="chckfinal()"><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
+    <div class="top">
+      <h3 class="set" style="margin-top:1vh"><b>Secondary Structure elements<b></b></b></h3><b><b>
+      <h4 class="set" style="margin-bottom:1vh">
+        To Study the effect of Secondary Structure elements on CD spectrum of proteins.      </h4>
+    
+    <div class="flexing" style="margin-bottom:-3vh">
+    <button class="btn btn-success" id="new" onclick="window.location.href = './index.html';">
+      <b>Previous!</b>
+    </button>
+      <button class="btn btn-danger" id="new" onclick="window.location.href = './help.html';">
+        <b>Help!</b>
+      </button>
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+        <b>Instructions!</b>
+      </button>
+
+
+    </div>
+
+    <div id="overlay0" onclick="off(0)">
+      <div id="text">
+        <h3> <b>Instructions!</b></h3>
+        <b>1. Select one of the <br/>sample from secondary <br/>structure option<br/>
+        2. Purge the N2<br/>(Important step) as it <br/>removes the O2 from the chamber which can <br/>interferes with the result.<br/>
+        3. Measure CD for that <br/>sample</b></div>
+    </div>
+
+    <div id="overlay2" onclick="off(2)">
+      <div id="result1"></div>
+    </div>
+ 
+    <div id="overlay">
+      <img id="img-six" src="../shapes/93.png"/>
+      <img id="img-gif" src="../shapes/frames.gif"/>
+    </div>
+</b></b></div><b><b>
+<div style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"></div>
+    <div class="flexing">
+	</div>
+	  <div id="content"> <br/> <br/> <br/>
+	    <button class="btn btn-danger" id="new" onclick="chck()">
+       N2 purge 
+      </button>
+      <button class="btn btn-info" id="new" onclick="window.location.href = '../lab/exp2/simulation/mfs_exp2b.html';">
+   Measure CD 
+    </button>	  
+
+    <button class="btn btn-dark dropdown-toggle" data-toggle="dropdown" id="menu1" type="button">Secondary Structure
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu">
+      <li role="presentation"><h5 onclick="selection(1)" role="menuitem">Sample 1</h5></li>
+      <li role="presentation"><h5 onclick="selection(2)" role="menuitem">Sample 2</h5></li>
+      <li role="presentation"><h5 onclick="selection(3)" role="menuitem">Sample 3</h5></li>
+
+   
+    </ul>
+
+<div class="row">
+    <div class="col-sm-6" id="apparatus">
+        <img id="computer" src="../shapes/15.png"/>
+        <img id="n2" src="../shapes/Capture.PNG"/>
+
+
+      </div>
+    </div>
+    
+</div>
+		
+
+    
+
+
+
+
+  
+
+</b></b></body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager-->
+<title>Example of defining a macro that autoloads an extension</title>
+<!-- Copyright (c) 2012 Design Science, Inc. -->
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+
+<!--
+ |
+ |  This page shows how to define macros that autoloads an extension
+ |  where those macros are implemented.
+ |  
+ |  The \cancel, \bcancel, \xcancel, and \cancelto macros are
+ |  all defined within the cancel extension, so we tie these
+ |  macros to the function that loads an extension, passing it
+ |  the name of the extension to load.
+ |
+ |-->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+</script>
+<script src="../MathJax.js?config=TeX-AMS_HTML-full" type="text/javascript"></script>
+
+</head>
+<body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
+
+<p>
+This page makes <code>\cancel</code>, <code>\bcancel</code>, 
+<code>\xcancel</code>, and <code>\cancelto</code> all be defined so that 
+they will load the <code>cancel.js</code> extension when first used.
+</p>
+
+<p>
+Here is the first usage:  \(\cancel{x+1}\).  It will cause the cancel 
+package to be loaded automatically.
+</p>
+
+
+
+</body></html>

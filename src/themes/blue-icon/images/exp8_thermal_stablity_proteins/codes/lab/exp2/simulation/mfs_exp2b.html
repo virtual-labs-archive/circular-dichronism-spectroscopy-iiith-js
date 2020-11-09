@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager-->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="../../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="mfs_expt2.css" rel="stylesheet" type="text/css"/>
+    <link href="./pure.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="../../libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../../libraries/jQueryRotate.js"></script>
+    <script src="mfs_expt2.js" type="text/javascript"></script>
+    <script src="mfs2_animations.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet"/>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title class="">Measurement of CD Spectra</title>
+  </head>
+
+  <body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
+    <!-- Body is divided into three rows -->
+    <div class="container">
+      <!-- First row consists of title of the experiment and the reset button -->
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="btn-info">
+            Measurement of CD Spectra at Different Temperatures
+          </h3>
+          <div class="cc">
+            <button class="btn btn-danger" id="reset_btn">
+              Reset
+            </button>
+            <input class="btn btn-info" id="skip_btn" onclick="window.location.href = './../../../html/page5.html' " type="button" value="Skip"/>
+
+            <button class="btn btn-primary" id="manual_button">Manual</button>
+          </div>
+        </div>
+      </div>
+      <br/>
+
+      <!-- Second row consists of two columns with one column containing buttons ie manual and data and the other containing shelf with apparatus -->
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- Manual image button displays the set of instructions to be followed to perform experiment
+        On clicking this button a box modal appears over the page n displays the instruction -->
+          <br/>
+          <br/>
+
+          <br/><br/>
+          <div class="modal" id="manual" style="z-index: 1200;">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Manual</h2>
+              </div>
+
+              <div class="modal-body" style="text-align: left; font-size: 18px;">
+                <ol>
+                  <li>
+                    Click on SOLUTION to bring it to the experiment table.
+                  </li>
+                  <li>
+                    Click on the CUVETTE to bring it to the experiment table
+                  </li>
+                  <li>Click on the PIPPETTE to bring it to the table</li>
+                  <li>
+                  Click on PIPPETTE to take solution from flask</li>
+                  <li>Click on PIPPETTE to make it out of the flask and come over the cuvette.
+                  </li>
+                  <li>
+                    Click on the pipette again to transfer the solution into the
+                    cuvette.
+                  </li>
+                  <li>Click on power button(green) to start the spectrofluorimeter. 30 min for the Initialization for the instrument</li>
+                  <li>
+                    Click on the lid of sample chamber of the Spectrometer to
+                    open it for placing the sample in the instrument.
+                  </li>
+                  <li>
+                    Click on the cuvette to place it in the sample holder of the
+                    chamber.
+                  </li>
+                  <li>
+                    Close the lid of the sample chamber by clicking on the lid.
+                  </li>
+                  <li>
+                    Click on the Computer Screen
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- Data image button displays the graphs obtained on plotting absorbance against wavelength for different sample path lengths
+            On clicking this button a new page displaying the graphs for three different path length is opened  -->
+          <img id="data_button" src="../../common_images/data_button.png"/>
+        </div>
+
+        <div class="col-sm-6" id="apparatus">
+          <img id="shelf" src="../../common_images/shelf1.png"/>
+          <img id="round-bottom-flask" src="images/round-bottom-flask.png"/>
+          <img id="pipette" src="../../common_images/pipette.png"/>
+          <img id="cuvette" src="../../common_images/cuvette.png"/>
+        </div>
+      </div>
+      <br/><br/><br/>
+
+      <!-- Third row consists of table with various devices on it  -->
+      <div class="row">
+        <div class="col-sm-12" id="table">
+          <img id="table_with_spec" src="../../common_images/spec_fluormeter.png"/>
+          <!-- button to scan the sample on the computer-->
+          <img id="comp_trans_button" src="../../common_images/vertical_button.png"/>
+          <!-- buttons to open and close the spectrophotometer lid -->
+          <img id="spectrolid_trans_button" src="../../common_images/vertical_button.png"/>
+          <img id="spectrolid_trans_button1" src="../../common_images/vertical_button.png"/>
+          <!-- text that shows the instructions to be followed next -->
+          <div id="demo"></div>
+          <!-- button to switch on and switch off the spectrophotometer -->
+          <img id="power_trans_button" src="../../common_images/vertical_button.png"/>
+        </div>
+      </div>
+
+      <!-- Florescence graph validation -->
+      <img id="clockScreen" src="../../common_images/clock.png"/>
+      <!-- Image of the hand of the clock -->
+      <img id="clockHand" src="../../common_images/hand.png"/>
+      <!-- Image of the greyed background displayed as a background while scanning the sample -->
+      <img id="scan" src="../../common_images/transparent.png"/>
+      <!-- This image is used to enter the input values to display the graph1/graph2-->
+      <img id="mfs_form1" src="../../common_images/mfs_form1.png"/>
+      <img id="mfs_form2" src="../../common_images/mfs_form2.png"/>
+      <!--Displays the graph by clicking on ok button -->
+      <img class="data_validation" id="ok_btn" src="../../common_images/vertical_button.png"/>
+      <!-- dropdown box to select the graphs to display -->
+      <select class="data_validation" id="select">
+        <option id="Excitation" value="Excitation">Excitation</option>
+        <option id="Emission" value="Emission">Emission</option>
+      </select>
+      <!--graph input values -->
+      <input autocomplete="off" class="data_validation" id="input1" type="text"/>
+      <input autocomplete="off" class="data_validation" id="input2" type="text"/>
+      <input autocomplete="off" class="data_validation" id="input3" type="text"/>
+      <!-- To display the videos on entering the correct input values -->
+      <video class="videos" id="video1">
+        <source src="videos/graph1.mp4" type="video/mp4"></source>
+      </video>
+      <video class="videos" id="video2">
+        <source src="videos/graph2.mp4" type="video/mp4"></source>
+      </video>
+      <!-- To close the graphs video -->
+      <img id="disposegraph" src="../../common_images/vertical_button.png"/>
+    </div>
+  
+
+</body></html>
