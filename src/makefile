@@ -4,7 +4,7 @@ build-js-dir=${build-dir}/js
 
 theme=blue-icon
 
-all: help-dir patch-analytics
+all:patch-analytics help-dir
 
 #all:  help-dir 
 
