@@ -1,6 +1,9 @@
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager-->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
     <!--[if lte IE 8
       ]><script
         language="javascript"
@@ -8,37 +11,13 @@
         src="flot/excanvas.min.js"
       ></script
     ><![endif]-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"
-  ></script>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet"/>
+    <script crossorigin="anonymous" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      language="javascript"
-      type="text/javascript"
-      src="flot/jquery.js"
-    ></script>
-    <script
-      language="javascript"
-      type="text/javascript"
-      src="flot/jquery.flot.js"
-    ></script>
-    <script
-      language="javascript"
-      type="text/javascript"
-      src="scripts/E9dataJSON.js"
-    ></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet"/>
+    <script language="javascript" src="flot/jquery.js" type="text/javascript"></script>
+    <script language="javascript" src="flot/jquery.flot.js" type="text/javascript"></script>
+    <script language="javascript" src="scripts/E9dataJSON.js" type="text/javascript"></script>
     <!-- <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -202,80 +181,44 @@
       }
     </style>
   </head>
-  <body>
+  <body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
     <div id="content">
       <div style="float: left; width: 900px; text-align: left;">
         <h1 class="boundingBox2 btn-info">CD Spectrum of Rhodospin</h1>
-        <br />
+        <br/>
         <div id="placeholder" style="width: 600px; height: 400px;"></div>
-        <div style="margin-left: 50px;" id="graph1_Lower">
+        <div id="graph1_Lower" style="margin-left: 50px;">
           <h3 class="boundingBox1 btn-info" style="width: 400px;">
             Select Chemical
           </h3>
           <table cellspacing="10">
-            <tr>
+            <tbody><tr>
               <td>
-                <input
-                  id="11"
-                  type="radio"
-                  name="select_chemical"
-                  value="sds"
-                  onclick='plotChemical("sds");'
-                />30% SDS
+                <input id="11" name="select_chemical" onclick='plotChemical("sds");' type="radio" value="sds"/>30% SDS
               </td>
 
               <td>
-                <input
-                  id="12"
-                  type="radio"
-                  name="select_chemical"
-                  value="guhcl"
-                  onclick='plotChemical("guhcl");'
-                />8M GuHCl
+                <input id="12" name="select_chemical" onclick='plotChemical("guhcl");' type="radio" value="guhcl"/>8M GuHCl
               </td>
 
               <td>
-                <input
-                  id="13"
-                  type="radio"
-                  name="select_chemical"
-                  value="none"
-                  onclick='plotChemical("without");'
-                />No Chemical
+                <input id="13" name="select_chemical" onclick='plotChemical("without");' type="radio" value="none"/>No Chemical
               </td>
             </tr>
             <tr>
               <td>
-                <input
-                  id="14"
-                  type="radio"
-                  name="select_chemical"
-                  value="urea"
-                  onclick='plotChemical("urea");'
-                />10M Urea
+                <input id="14" name="select_chemical" onclick='plotChemical("urea");' type="radio" value="urea"/>10M Urea
               </td>
 
               <td>
-                <input
-                  id="15"
-                  type="radio"
-                  name="select_chemical"
-                  value="tfa"
-                  onclick='plotChemical("tfa");'
-                />4M TFA
+                <input id="15" name="select_chemical" onclick='plotChemical("tfa");' type="radio" value="tfa"/>4M TFA
               </td>
 
               <td>
-                <input
-                  id="16"
-                  type="radio"
-                  name="select_chemical"
-                  value="all"
-                  onclick='plotChemical("all");'
-                />See All
+                <input id="16" name="select_chemical" onclick='plotChemical("all");' type="radio" value="all"/>See All
               </td>
             </tr>
-          </table>
+          </tbody></table>
 
           <p id="hoverdata" style="font-size: 11px;">
             Mouse Hover Position: (<span id="x">0</span>,
@@ -284,13 +227,11 @@
         </div>
       </div>
 
-      <div
-        style="float: left; width: 500px; margin-left: 50px; font-size: 16px;"
-      >
+      <div style="float: left; width: 500px; margin-left: 50px; font-size: 16px;">
         <h2 class="boundingBox1 btn-info" style="width: 500px;">Observations</h2>
-        <br />
-        <table width="100%" border="1" cellpadding="5" style="font-size: 12px;">
-          <tr>
+        <br/>
+        <table border="1" cellpadding="5" style="font-size: 12px;" width="100%">
+          <tbody><tr>
             <th width="20%">Chemical</th>
             <th width="20%">Helix</th>
             <th width="20%">Antiparallel</th>
@@ -341,21 +282,18 @@
             <td></td>
             <td></td>
           </tr>
-        </table>
+        </tbody></table>
 
-        <span style="font-size: 11px;">* - Cannot be determined.</span><br />
+        <span style="font-size: 11px;">* - Cannot be determined.</span><br/>
         <center>
 
-          <button
-          class="btn btn-dark boundingBox1"
-          onclick='window.location="../Quiz/game.html";'
-        >
+          <button class="btn btn-dark boundingBox1" onclick='window.location="../Quiz/game.html";'>
           Go To Analysis
         </button>
 
         </center>
 
-        <br />
+        <br/>
         <h3 class="boundingBox1 btn-info" style="width: 100%;">INSTRUCTIONS</h3>
         <ul style="font-size: 13px;">
           <li>Select any chemical to see the corresponding CD spectra.</li>
@@ -371,9 +309,10 @@
 
         <center></center>
       </div>
-      <input type="hidden" value="<?php echo $chemical; ?>" id="chemical" />
-      <br /><br />
+      <input id="chemical" type="hidden" value="&lt;?php echo $chemical; ?&gt;"/>
+      <br/><br/>
 
  
-  </body>
-</html>
+  
+
+</div></body></html>
